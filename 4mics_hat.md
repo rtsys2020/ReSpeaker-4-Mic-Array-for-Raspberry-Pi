@@ -8,19 +8,21 @@ surveyurl:
 sku:
 ---
 
-![4mic hat overview](https://github.com/SeeedDocument/ReSpeaker-4-Mics-Pi-HAT/blob/master/img/overview.png?raw=true)
+![4mic hat overview](https://github.com/SeeedDocument/ReSpeaker-4-Mics-Pi-HAT/blob/master/img/overview.jpg?raw=true)
 
 ReSpeaker 4-Mics Pi HAT is a quad-microphone expansion board for Raspberry Pi designed for AI and voice applications. This means that you can build a more powerful and flexible voice product that integrates Amazon Alexa Voice Service, Google Assistant, and so on.
 
 
-Different from [ReSpeaker 2-Mics Pi HAT](https://www.seeedstudio.com/ReSpeaker-2-Mics-Pi-HAT-p-2874.html), this board is developed based on [AC108](http://www.x-powers.com/en.php/Info/product_detail/article_id/41), a highly integrated quad-channel ADC with I2S/TDM output transition for high definition voice capture. Besides, this 4-Mics version provides a super cool LED ring, which contains 12 APA102 programable LEDs. With that 4 microphones and the LED ring, Raspberry Pi would have ability to do VAD(Voice Activity Detection), estimate DOA(Direction of Arrival) and show the direction via LED ring, just like Amazon Echo or Google Home.
+Different from [ReSpeaker 2-Mics Pi HAT](https://www.seeedstudio.com/ReSpeaker-2-Mics-Pi-HAT-p-2874.html), this board is developed based on [AC108](http://www.x-powers.com/en.php/Info/product_detail/article_id/41), a highly integrated quad-channel ADC with I2S/TDM output transition for high definition voice capture, which allows the device to pick up sounds in a 3 meters radius. Besides, this 4-Mics version provides a super cool LED ring, which contains 12 APA102 programable LEDs. With that 4 microphones and the LED ring, Raspberry Pi would have ability to do VAD(Voice Activity Detection), estimate DOA(Direction of Arrival), do KWS(Keyword Search) and show the direction via LED ring, just like Amazon Echo or Google Home.
 
 ## Features
 
 * Raspberry Pi compatible(Support Raspberry Pi Zero and Zero W, Raspberry Pi B+, Raspberry Pi 2 B and Raspberry Pi 3 B)
 * 4 Microphones
+* 3 meters radius voice capture
 * 2 Grove Interfaces
 * 12 APA102 User LEDs
+* Software Algorithm: VAD(Voice Activity Detection), DOA(Direction of Arrival) and KWS(Keyword Search)
 
 Note that there are no any audio output interfaces on ReSpeaker 4-Mics Pi HAT. It is only for voice capture. And you could use the [headphone jack](https://www.raspberrypi.org/documentation/configuration/audio-config.md) on Raspberry Pi for audio output.
 
@@ -48,8 +50,8 @@ Note that if you want to use the APA102 RGB LEDs, please write HIGH to `GPIO5` f
 
 Mount ReSpeaker 4-Mics Pi HAT on your Raspberry Pi, make sure that the pins are properly aligned when stacking the ReSpeaker 4-Mics Pi HAT.
 
-![connection pic1](https://github.com/SeeedDocument/ReSpeaker-4-Mics-Pi-HAT/blob/master/img/connect1.png?raw=true)
-![connection pic2](https://github.com/SeeedDocument/ReSpeaker-4-Mics-Pi-HAT/blob/master/img/connect2.png?raw=true)
+![connection pic1](https://github.com/SeeedDocument/ReSpeaker-4-Mics-Pi-HAT/blob/master/img/connect1.jpg?raw=true)
+![connection pic2](https://github.com/SeeedDocument/ReSpeaker-4-Mics-Pi-HAT/blob/master/img/connect2.jpg?raw=true)
 
 ### Setup the driver
 
@@ -88,6 +90,16 @@ Open Audacity and select **AC108** to test:
 
 <!-- ### Configure sound settings and adjust the volume with **alsamixer** -->
 
+Or you could record with `arecord` and play with `aplay`:
+
+```
+arecord -Dac108 -f S16_LE -c 4 -r 16000 hello.wav
+aplay -Dplughw:1,0 hello.wav
+// Audio will come out via audio jack of Raspberry Pi
+```
+
+Note: If you can't record or can't play or play something strange, please see [here](#Debug).
+
 ### Getting Started with Google Assistant and Snowboy
 
 ### How to use the on-board APA102 LEDs
@@ -101,18 +113,18 @@ Each on-board APA102 LED has an additional driver chip. The driver chip takes ca
 
 ```
 cd /home/pi
-git clone https://github.com/respeaker/mic_hat.git
-cd /home/pi/mic_hat
+git clone https://github.com/respeaker/4mics_hat.git
+cd /home/pi/4mics_hat
 ```
 
-- Edit `pixels.py` with `nano pixels.py`, change `PIXELS_N = 3` to `PIXELS_N = 12`, then press CTRL-X, press Y and Enter to save.
+<!-- - Edit `pixels.py` with `nano pixels.py`, change `PIXELS_N = 3` to `PIXELS_N = 12`, then press CTRL-X, press Y and Enter to save.
 
-![](https://github.com/SeeedDocument/ReSpeaker-4-Mics-Pi-HAT/blob/master/img/pixels_n12.png?raw=true)
+![](https://github.com/SeeedDocument/ReSpeaker-4-Mics-Pi-HAT/blob/master/img/pixels_n12.png?raw=true) -->
 
 - Install spidev `pip install spidev`
 - Run the example code `python pixels.py`
 
-### DoA on ReSpeaker 4-Mics Pi HAT
+<!-- ### DoA on ReSpeaker 4-Mics Pi HAT -->
 
 
 
