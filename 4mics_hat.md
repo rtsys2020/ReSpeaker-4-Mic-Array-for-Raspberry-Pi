@@ -8,7 +8,7 @@ surveyurl:
 sku:
 ---
 
-![4mic hat 图片]()
+![4mic hat overview](https://github.com/SeeedDocument/ReSpeaker-4-Mics-Pi-HAT/blob/master/img/overview.png?raw=true)
 
 ReSpeaker 4-Mics Pi HAT is a quad-microphone expansion board for Raspberry Pi designed for AI and voice applications. This means that you can build a more powerful and flexible voice product that integrates Amazon Alexa Voice Service, Google Assistant, and so on.
 
@@ -48,8 +48,8 @@ Note that if you want to use the APA102 RGB LEDs, please write HIGH to `GPIO5` f
 
 Mount ReSpeaker 4-Mics Pi HAT on your Raspberry Pi, make sure that the pins are properly aligned when stacking the ReSpeaker 4-Mics Pi HAT.
 
-![connection pic1]()
-![connection pic2]()
+![connection pic1](https://github.com/SeeedDocument/ReSpeaker-4-Mics-Pi-HAT/blob/master/img/connect1.png?raw=true)
+![connection pic2](https://github.com/SeeedDocument/ReSpeaker-4-Mics-Pi-HAT/blob/master/img/connect2.png?raw=true)
 
 ### Setup the driver
 
