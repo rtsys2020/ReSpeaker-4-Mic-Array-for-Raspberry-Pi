@@ -5,7 +5,7 @@ bzurl:
 oldwikiname:
 prodimagename:
 surveyurl:
-sku:
+sku: 103030216
 ---
 
 ![](https://github.com/SeeedDocument/ReSpeaker-4-Mic-Array-for-Raspberry-Pi/blob/master/img/overview.jpg?raw=true)
