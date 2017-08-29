@@ -181,4 +181,4 @@ ctl.!default {
 
 [Schematics of ReSpeaker 4-Mic Array for Raspberry Pi(PDF)](https://github.com/SeeedDocument/ReSpeaker-4-Mic-Array-for-Raspberry-Pi/blob/master/src/ReSpeaker%204-Mic%20Array%20for%20Raspberry%20Pi%20%20v1.0.pdf)
 
-[Schematics of ReSpeaker 4-Mic Array for Raspberry Pi(EAGLE)]()
+[Schematics of ReSpeaker 4-Mic Array for Raspberry Pi(EAGLE)](https://github.com/SeeedDocument/ReSpeaker-4-Mic-Array-for-Raspberry-Pi/blob/master/src/ReSpeaker%204-Mic%20Array%20for%20Raspberry%20Pi_eagle.zip)
